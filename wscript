@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 
 VERSION = '0.1.0'
-APPNAME = 'pigment-vala'
+APPNAME = 'vala-pigment'
 
 srcdir = '.'
 blddir = 'build'
@@ -34,7 +34,7 @@ def configure(conf):
 def build(bld):
   bld.add_subdirs ('vapi')
   obj = bld.new_task_gen('subst')
-  obj.source = 'pigment-0.3-vala.pc.in'
+  obj.source = 'vala-pigment-0.3.pc.in'
   obj.dict   = obj.env
   obj.install_path = '${LIBDIR}/pkgconfig'
 
