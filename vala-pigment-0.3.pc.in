@@ -2,8 +2,8 @@ prefix=@PREFIX@
 exec_prefix=@EXEC_PREFIX@
 libdir=@LIBDIR@
 
-Name: pigment-0.3-vala
-Description: Pigment-0.3 vala bindings
+Name: vala-pigment-0.3
+Description: Vala bindgins for Pigment-0.3
 Requires: glib-2.0 gobject-2.0 pigment-0.3
 Version: @VERSION@
 Libs: -L${libdir}
