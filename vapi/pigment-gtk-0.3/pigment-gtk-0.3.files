@@ -1,0 +1,2 @@
+include/pigment-0.3/pgm/gtk
+lib/libpigment-gtk-0.3.so

@@ -929,12 +929,12 @@ namespace Pgm {
 		HORIZONTAL_FLIP,
 		VERTICAL_FLIP
 	}
-	[CCode (cprefix = "PGM_VIEWPORT_ROTATION_", cheader_filename = "pgm/pgm.h")]
+	[CCode (cprefix = "PGM_VIEWPORT_", cheader_filename = "pgm/pgm.h")]
 	public enum ViewportRotation {
-		NONE,
-		90,
-		180,
-		270
+		ROTATION_NONE,
+		ROTATION_90,
+		ROTATION_180,
+		ROTATION_270
 	}
 	[CCode (cprefix = "PGM_VIEWPORT_", cheader_filename = "pgm/pgm.h")]
 	[Flags]
@@ -947,14 +947,6 @@ namespace Pgm {
 	public static delegate bool PluginInitFunc (GLib.TypeModule module);
 	[CCode (cheader_filename = "pgm/pgm.h")]
 	public static delegate bool PluginShutdownFunc (GLib.TypeModule module);
-	[CCode (cheader_filename = "pgm/pgm.h")]
-	public const int 0;
-	[CCode (cheader_filename = "pgm/pgm.h")]
-	public const int 1;
-	[CCode (cheader_filename = "pgm/pgm.h")]
-	public const int 2;
-	[CCode (cheader_filename = "pgm/pgm.h")]
-	public const int 3;
 	[CCode (cheader_filename = "pgm/pgm.h")]
 	public const int 3270_AltCursor;
 	[CCode (cheader_filename = "pgm/pgm.h")]
@@ -1015,18 +1007,6 @@ namespace Pgm {
 	public const int 3270_Setup;
 	[CCode (cheader_filename = "pgm/pgm.h")]
 	public const int 3270_Test;
-	[CCode (cheader_filename = "pgm/pgm.h")]
-	public const int 4;
-	[CCode (cheader_filename = "pgm/pgm.h")]
-	public const int 5;
-	[CCode (cheader_filename = "pgm/pgm.h")]
-	public const int 6;
-	[CCode (cheader_filename = "pgm/pgm.h")]
-	public const int 7;
-	[CCode (cheader_filename = "pgm/pgm.h")]
-	public const int 8;
-	[CCode (cheader_filename = "pgm/pgm.h")]
-	public const int 9;
 	[CCode (cheader_filename = "pgm/pgm.h")]
 	public const int A;
 	[CCode (cheader_filename = "pgm/pgm.h")]

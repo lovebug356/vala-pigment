@@ -1,2 +1,2 @@
-bld.install_files ('${DATAROOTDIR}/vala/vapi', 'pigment-0.3.vapi')
-bld.install_files ('${DATAROOTDIR}/vala/vapi', 'pigment-0.3.deps')
+bld.install_files ('${DATAROOTDIR}/vala/vapi', '*.vapi')
+bld.install_files ('${DATAROOTDIR}/vala/vapi', '*.deps')
