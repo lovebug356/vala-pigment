@@ -73,9 +73,9 @@ namespace Pgm {
 		public Pgm.Error get_fg_color (uchar[] r, uchar[] g, uchar[] b, uchar[] a);
 		public Pgm.Error get_opacity (uchar[] opacity);
 		public Pgm.Error get_position (float x, float y, float z);
-		public Pgm.Error get_rotation_x (float angle);
-		public Pgm.Error get_rotation_y (float angle);
-		public Pgm.Error get_rotation_z (float angle);
+		public Pgm.Error get_rotation_x (out float angle);
+		public Pgm.Error get_rotation_y (out float angle);
+		public Pgm.Error get_rotation_z (out float angle);
 		public Pgm.Error get_scale (float scale);
 		public Pgm.Error get_size (float width, float height);
 		public virtual Pgm.Error hide ();
@@ -608,7 +608,7 @@ namespace Pgm {
 		public Pgm.Error get_iconified (bool iconified);
 		public Pgm.Error get_message_filter (GLib.List filter);
 		public Pgm.Error get_opacity (uchar[] opacity);
-		public virtual Pgm.Error get_pixel_formats (ulong formats_mask);
+		public virtual Pgm.Error get_pixel_formats (out ulong formats_mask);
 		public virtual Pgm.Error get_screen_resolution (int width, int height);
 		public virtual Pgm.Error get_screen_size_mm (int width, int height);
 		public virtual Pgm.Error get_size (int width, int height);
@@ -638,9 +638,9 @@ namespace Pgm {
 		public virtual Pgm.Error show ();
 		public Pgm.Error to_canvas (float canvas_x, float canvas_y, float canvas_z, float viewport_x, float viewport_y, float viewport_z);
 		public virtual Pgm.Error update_projection ();
-		public virtual signal void button_press_event (Pgm.Event event);
+		public virtual signal void button_press_event (Pgm.EventButton event);
 		public virtual signal void button_pressure_event (Pgm.Event event);
-		public virtual signal void button_release_event (Pgm.Event event);
+		public virtual signal void button_release_event (Pgm.EventButton event);
 		public virtual signal void configure_event (Pgm.Event event);
 		public virtual signal void delete_event (Pgm.Event event);
 		public virtual signal void drag_drop_event (Pgm.Event event);
@@ -649,7 +649,7 @@ namespace Pgm {
 		public virtual signal void expose_event (Pgm.Event event);
 		public virtual signal void key_press_event (Pgm.Event event);
 		public virtual signal void key_release_event (Pgm.Event event);
-		public virtual signal void motion_notify_event (Pgm.Event event);
+		public virtual signal void motion_notify_event (Pgm.EventMotion event);
 		public virtual signal void pixels_read (uint width, uint height, void* pixels);
 		public virtual signal void scroll_event (Pgm.Event event);
 		public virtual signal void state_event (Pgm.Event event);
@@ -663,7 +663,7 @@ namespace Pgm {
 		public Pgm.Error get_description (string description);
 		public Pgm.Error get_license (string license);
 		public Pgm.Error get_origin (string origin);
-		public static Pgm.Error make (string name, out unowned Pgm.Viewport viewport);
+		public static Pgm.Error make (string name, out Pgm.Viewport viewport);
 		[CCode (has_construct_function = false)]
 		public ViewportFactory (string name);
 	}
@@ -4362,7 +4362,7 @@ namespace Pgm {
 	[CCode (cheader_filename = "pgm/pgm.h")]
 	public static bool events_pending ();
 	[CCode (cheader_filename = "pgm/pgm.h")]
-	public static void init (int argc, string argv);
+	public static void init ([CCode (array_length_pos = 0.9)] ref unowned string[] args);
 	[CCode (cheader_filename = "pgm/pgm.h")]
 	public static bool init_check (int argc, string argv);
 	[CCode (cheader_filename = "pgm/pgm.h")]

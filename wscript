@@ -18,6 +18,19 @@ def configure(conf):
       atleast_version='2.10.0',
       mandatory=True,
       args='--cflags --libs')
+  conf.check_cfg(package='glib-2.0',
+      uselib_store='GLIB',
+      atleast_version='2.10.0',
+      mandatory=True,
+      args='--cflags --libs')
+  conf.check_cfg(package='pigment-0.3',
+      uselib_store='PIGMENT',
+      mandatory=True,
+      args='--cflags --libs')
+  conf.check_cfg(package='gstreamer-0.10',
+      uselib_store='GSTREAMER',
+      mandatory=True,
+      args='--cflags --libs')
 
   conf.define('PACKAGE', APPNAME)
   conf.define('PACKAGE_NAME', APPNAME)
@@ -33,6 +46,8 @@ def configure(conf):
 
 def build(bld):
   bld.add_subdirs ('vapi')
+  bld.add_subdirs ('examples')
+
   obj = bld.new_task_gen('subst')
   obj.source = 'vala-pigment-0.3.pc.in'
   obj.dict   = obj.env

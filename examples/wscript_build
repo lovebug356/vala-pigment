@@ -1,0 +1,9 @@
+vala_pigment_video = bld.new_task_gen ('cc', 'program')
+vala_pigment_video.find_sources_in_dirs ('.')
+vala_pigment_video.uselib='GLIB GOBJECT PIGMENT GSTREAMER'
+vala_pigment_video.packages = 'glib-2.0 pigment-0.3 gstreamer-0.10'
+vala_pigment_video.vapi_dirs = '. ../vapi'
+vala_pigment_video.target='vala-pigment-video'
+vala_pigment_video.uselib_local = ''
+vala_pigment_video.threading = True
+vala_pigment_video.install_path = None
