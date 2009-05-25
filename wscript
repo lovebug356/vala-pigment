@@ -46,7 +46,7 @@ def configure(conf):
 
 def build(bld):
   bld.add_subdirs ('vapi')
-  bld.add_subdirs ('examples')
+  #bld.add_subdirs ('examples')
 
   obj = bld.new_task_gen('subst')
   obj.source = 'vala-pigment-0.3.pc.in'
