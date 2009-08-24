@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 
-VERSION = '0.1.0'
+VERSION = '0.2.0'
 APPNAME = 'vala-pigment'
 
 srcdir = '.'
@@ -21,10 +21,6 @@ def configure(conf):
   conf.check_cfg(package='glib-2.0',
       uselib_store='GLIB',
       atleast_version='2.10.0',
-      mandatory=True,
-      args='--cflags --libs')
-  conf.check_cfg(package='pigment-0.3',
-      uselib_store='PIGMENT',
       mandatory=True,
       args='--cflags --libs')
   conf.check_cfg(package='gstreamer-0.10',
